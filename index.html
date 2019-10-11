@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Lehký úvod do kvantových počítačů</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- My own customizations -->
+    <style>
+      .reveal li {
+        margin: 0.5em 0;
+      }
+
+      .reveal .attribution {
+        position: fixed;
+        bottom: 0px;
+        width: 90%;
+        font-size: 0.4em;
+        font-style: italic;
+      }
+
+      .reveal .note {
+        font-size: 0.8em;
+        font-style: italic;
+      }
+
+      .reveal img.coin {
+        padding: 0 6px;
+        border:none;
+        background: none;
+        box-shadow: none;
+      }
+
+      .reveal img.stealth {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      ul.nodisc {
+        list-style-type: none;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+<!-- ======= SLIDES START ======= -->
+
+<section>
+  <br/>
+  <br/>
+  <h2>Kvantové počítače</h2>
+  <h4><em>lehký úvod do problematiky</em></h4>
+  <br/>
+  <br/>
+  <div style="text-align: right">
+    <p>Miroslav Bajtoš
+    <br/><em>Lead Node.js Engineer @ IBM</em>
+  </div>
+</section>
+
+<section>
+  <h2>Přes den...</h2>
+  <div class="fragment">
+    <img width="200" class="stealth" src="img/loopback-v3.svg" alt="LoopBack v3 logo" />
+    &nbsp;&nbsp;
+    <img width="200" class="stealth" src="img/loopback-mark-frame-white.svg" alt="LoopBack v4 logo" />
+    <p><a href="https://loopback.io" target="_blank" rel="noopener">loopback.io</a>
+  </div>
+  <p class="fragment" style="text-align: right">a v noci &rarr;
+</section>
+
+<section>
+  <!--
+    IBM Q System One
+    The World’s First Integrated Quantum System
+  -->
+
+  <img
+    src="img/IBM-Q-System-One.jpg"
+    alt="IBM Q System One"
+    style="border:none"
+    />
+
+  <p class="attribution">
+  Image courtesy of IBM Research
+  [<a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>]
+</section>
+
+<section>
+  <section>
+    <p style="font-size: 10em;">A
+  </section>
+
+  <section>
+    <code style="font-size: 4.8em">01000001</code>
+    <p class="fragment">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-front.png" width=100 alt="5Kc (back)">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-back.png" width=100 alt="5Kc (front)">
+    <img class="coin" src="img/5kc1928-front.png" width=100 alt="5Kc (back)">
+  </section>
+
+  <section>
+    <h2>superpozice</h2>
+    <p class="note">(superposition)
+  </section>
+
+  <section>
+    <h2>provázanost</h2>
+    <p class="note">(entanglement)
+  </section>
+
+  <section>
+    <p>Chinese satellite beats distance record for
+    <p>quantum entanglement
+    <p>[<a
+      href="https://www.newscientist.com/article/2134843-chinese-satellite-beats-distance-record-for-quantum-entanglement/">newscientist.com</a>,
+    2017-06-15]
+    <blockquote>Now, entanglement has been preserved in pairs of photons sent by
+      the Chinese satellite Micius to ground stations separated by 1203
+      kilometres — a new record.
+    </blockquote>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Kvantové algoritmy</h2>
+    <p class="fragment">vyhledávaní: Grover
+    <p class="fragment">faktorizace: Shor
+    <p class="fragment">(a mnoho dalších)
+  </section>
+
+  <section>
+    <h2>Dekohese</h2>
+    <p class="note">(quantum decoherence)
+  </section>
+
+  <section>
+    <img
+      src="img/IBMQ50.jpg"
+      alt="The cryostat cooling IBM quantum computer"
+      width="400"
+      />
+
+    <p class="attribution">
+    Image courtesy of IBM Research
+    [<a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>]
+  </section>
+
+  <section>
+    <h2>Detekce &amp; oprava chyb</h2>
+    <p class="fragment">spolehlivý počítač =~ 1 000 - 100 000 qubitů
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Současný stav</h2>
+  </section>
+
+  <section>
+    <h2>Hardware</h2>
+    <ul class="fragment">
+      <li>IBM: 53 qubitů
+      <li>Intel: 49 qubitů
+      <li>Google: 72 qubitů
+      <li>Rigetti: 128 qubitů
+    </ul>
+  </section>
+
+  <section>
+    <img src="./img/vacuum-tubes.jpg"
+      alt="12AX7 vacuum tubes glow inside a modern guitar amplifier"
+      width="800">
+    <!--
+      We are in the era of vacuum tubes/transistors,
+      trying to invent integrated circuits
+    -->
+  </section>
+
+  <section>
+    <h2>Software</h2>
+    <ul>
+      <li class="fragment">OpenQASM (assembler by IBM)
+      <li class="fragment">Qiskit (IBM)
+      <li class="fragment">Cirq (Google)
+      <li class="fragment">ProjectQ (ETH Zürich)
+      <li class="fragment">Microsoft Q#</li>
+      <li class="fragment">LIQ𝑈𝑖⏐〉(.NET simulator)</li>
+      <li class="fragment">Quil (assembler by Rigetti)
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Podivný svět qubitů</h2>
+  </section>
+
+  <section>
+    <h3>Můj první kvantový obvod<sup>TM</sup></h3>
+    <div class="fragment">
+    <pre><code class="python" data-trim data-noescape>
+    circ.measure(q, c)
+    </code></pre>
+    <img src="img/python/skeleton-circuit.png" alt="circuit of Skeleton example">
+    </div>
+  </section>
+
+  <section>
+    <h4>Výsledky ze simulátoru</h4>
+    <img src="img/python/skeleton-qasm_simulator.png"
+         alt="Histogram for skeleton example executed on qasm_simulator" />
+  </section>
+  <section>
+    <h4>Výsledky z hardware (ibmqx2)</h4>
+    <img src="img/python/skeleton-ibmqx2.png"
+         alt="Histogram for skeleton example executed on ibmqx2" />
+  </section>
+
+  <section>
+    <h3>Brána X (NOT)</h3>
+    <div class="fragment">
+    <pre><code class="python" data-trim data-noescape>
+      circ.x(q[0])
+      circ.measure(q, c)
+    </code></pre>
+    <img src="img/python/not-circuit.png" alt="circuit of NOT example">
+    </div>
+  </section>
+
+  <section>
+    <h4>Výsledky ze simulátoru</h4>
+    <img src="img/python/not-qasm_simulator.png"
+         alt="Histogram for NOT example executed on qasm_simulator" />
+  </section>
+  <section>
+    <h4>Výsledky z hardware (ibmqx2)</h4>
+    <img src="img/python/not-ibmqx2.png"
+         alt="Histogram for NOT example executed on ibmqx2" />
+  </section>
+  <section>
+    <h4>Uvolňování energie</h4>
+    <p class="note">(energy relaxation)
+    <p><img class="fragment"
+         src="img/python/energy-relaxation-ibmqx2.png"
+         width=600
+         alt="Histogram for ENERGY RELAXATION example executed on ibmqx2" />
+  </section>
+</section>
+
+<section>
+  <section>
+    <h3>Brána Hadamard</h3>
+    <p class="note">(superpozice)</p>
+
+    <div class="fragment">
+    <pre><code class="python" data-trim data-noescape>
+      circ.h(q[0])
+      circ.measure(q, c)
+    </code></pre>
+    <img src="img/python/hadamard-circuit.png" alt="circuit of HADAMARD example">
+    </div>
+  </section>
+
+  <section>
+    <h3>Výsledky ze simulátoru</h3>
+    <img src="img/python/hadamard-qasm_simulator.png"
+         alt="Histogram for HADAMARD example executed on qasm_simulator" />
+  </section>
+  <section>
+    <h4>Výsledky z hardware (ibmqx2)</h4>
+    <img src="img/python/hadamard-ibmqx2.png"
+         alt="Histogram for HADAMARD example executed on ibmqx2" />
+  </section>
+  <section>
+    <h4>Rozfázování</h4>
+    <p class="note">(dephasing)</p>
+    <img class="fragment"
+         src="img/python/dephasing-echo-ibmqx2.png"
+         width=600
+         alt="Histogram for DEPHASING ECHO example executed on ibmqx2" />
+  </section>
+
+  <section>
+    <h2>Bellův stav</h2>
+    <p class="note">(provázanost)</p>
+    <div class="fragment">
+    <pre><code class="python" data-trim data-noescape>
+      circ.h(q[0])
+      circ.cx(q[0], q[1])
+      circ.measure(q, c)
+    </code></pre>
+    <img src="img/python/bell-circuit.png" alt="circuit of BELL example">
+    </div>
+  </section>
+
+  <section>
+    <h3>Výsledky ze simulátoru</h3>
+    <img src="img/python/bell-qasm_simulator.png"
+         alt="Histogram for BELL example executed on qasm_simulator" />
+  </section>
+  <section>
+    <h4>Výsledky z hardware (ibmqx2)</h4>
+    <img src="img/python/bell-ibmqx2.png"
+         alt="Histogram for BELL example executed on ibmqx2" />
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Budoucnost</h2>
+  </section>
+
+  <section>
+    <h3>Lepší hardware</h3>
+    <p class="note fragment">Víc qubitů, méně chyb
+  </section>
+
+  <section>
+    <h3>Lepší software</h3>
+    <p class="note fragment">
+      Algoritmy odolnější vůči chybám HW
+      <br/>
+      API na vyšší úrovni (standardní algoritmy)
+  </section>
+
+  <section>
+    <h3>Rychlejší řešení pro<br/>těžké problémy</h3>
+    <p class="note fragment">simulace přírody/chemie<br/>strojové učení
+  </section>
+
+  <section>
+    <h3>Koexistence s klasickými počítači</h3>
+    <p class="note fragment">FPU, GPU, QPU
+  </section>
+
+  <section>
+    <h3>Dobrodružství na několik dekád</h3>
+    <p class="note fragment">to samé říkají už posledních 20-30 let ;-)
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Vyzkoušejte si!</h2>
+  </section>
+
+  <section>
+    <h3>IBM Q Experience</h3>
+    <p>16 qubitů naživo v Cloudu
+    <p><a href="https://www.ibm.com/quantum-computing/technology/experience">https://www.ibm.com/quantum-computing/technology/experience</a>
+  </section>
+
+  <section>
+    <h3>Hello Quantum</h3>
+    <p>Sada hlavolamů v mobilní aplikaci
+    <p><a href="http://helloquantum.mybluemix.net">http://helloquantum.mybluemix.net</a>
+  </section>
+
+
+  <section>
+    <h3>Entanglion</h3>
+    <p>První open-source kvantová deskovka
+    <p><a href="https://entanglion.github.io">https://entanglion.github.io</a>
+    <p><br/>
+    <div class="fragment">
+    <p>Vyrob si vlastní kopii na 3D tiskárně u Průši!
+    <p><a href="https://www.eventbrite.ca/e/vyrob-si-kvantovou-deskovku-u-prusi-tickets-63553309660">http://ibm.biz/deskovka</a>
+    </div>
+  </section>
+</section>
+
+<section>
+  <img src="./img/schrodinger-cat.png" alt="Schrodinger cat is dead/alive">
+  <p class="attribution">
+  Image courtesy of Abhijay Achatz [<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>]</br>
+  <a href="https://www.flickr.com/photos/frattel/8558044789">https://www.flickr.com/photos/frattel/8558044789</a>
+</section>
+
+<section>
+  <p><br/>
+  <p><br/>
+  <h2>Děkuji!</h2>
+  <p><br/>
+  <p class="note">slajdy: <a
+    href="https://bajtos.net/2019-QuantumIntro">bajtos.net/Q</a>
+  <p><br/>
+  <p><a href="https://www.meetup.com/nerddinner-hk/">meetup.com/nerddinner-hk</a>
+</section>
+
+<!-- ======= SLIDES END ======= -->
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        pdfMaxPagesPerSlide: 1,
+
+        progress: true,
+        history: true,
+        dependencies: [
+          // { src: 'plugin/markdown/marked.js' },
+          // { src: 'plugin/markdown/markdown.js' },
+          // { src: 'plugin/notes/notes.js', async: true },
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() { hljs.initHighlightingOnLoad(); }
+          },
+          // { src: 'plugin/chart/Chart.min.js' },
+          // { src: 'plugin/chart/csv2chart.js' },
+          // { src: 'plugin/line-numbers/line-numbers.js'},
+        ],
+      });
+    </script>
+  </body>
+</html>
